@@ -3,6 +3,11 @@ os: linux
 files:
   - source: /
     destination: /var/www/html/wordpressdemo
+permissions:
+  - object: /var/www/html/wordpressdemo
+    owner: root
+    group: root
+    mode: 777    
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
