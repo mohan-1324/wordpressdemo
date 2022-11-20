@@ -1,16 +1,16 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.php
+  - source: /
     destination: /var/www/html/wordpressdemo
 
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies.sh
+    - location: /var/www/html/wordpressdemo/scripts/install_dependencies.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/change_permissions.sh
+    - location: /var/www/html/wordpressdemo/scripts/change_permissions.sh
       timeout: 300
       runas:  root
   ApplicationStart:
